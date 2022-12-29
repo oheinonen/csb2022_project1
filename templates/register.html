@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  Create new account
+  <form class="" action="/register" method="post">
+    <p>Username: <br>
+    <input type="text" name="username"></p>
+    <p> Password: <br>
+      <!-- To fix FLAW 1 uncomment the three lines below
+      <p>
+      <input type=password name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must have at least 8 characters and contain:
+      1 upper and 1 lowercase letter and 1 number"></p>
+      -->
+
+      <input type="password" name="password"></p>
+    <p> In case you forget your password in the future, give your mother's name to recover account: <br>
+      <input type="text" name="name"></p>
+  
+      <input type="submit" value="register!">
+
+  </form>
+
+  <p> Already have an account?
+  <a href="/"> Log in</a></p>
+{% endblock %}

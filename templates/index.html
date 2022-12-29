@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  {% if session.user_id %}
+  <p> You are logged in as {{ session.username }}</p>
+  <a href="/add/secret"> add new secret</a>
+  {% for secret in secrets %}
+  <div class="">
+    Go to secret <a href="{{url_for('secret', id=secret[1])}}"> {{ secret[0] }} </a> page
+  </div>
+  {% endfor %}
+  <a href="{{url_for('delete_account', id=session.user_id)}}"><button> Delete your account </button> </a>
+  <a href="/logout">Log out</a>
+  {% else %}
+  Log in
+  <form class="" action="/login" method="post">
+    <p>Tunnus: <br>
+    <input type="text" name="username"></p>
+    <p> Salasana <br>
+      <input type="password" name="password"></p>
+      <input type="submit" value="Login">
+  </form>
+  <p>Forgot your password? <a href="/forgot_pass"> login here!</a> </p>
+
+  <p>New user? <a href="/register"> Register here!</a> </p>
+  {% endif %}
+{% endblock %}

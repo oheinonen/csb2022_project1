@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <form class="" action="/forgot_pass" method="post">
+    <p>Username: <br>
+    <input type="text" name="username"></p>
+    <p> What is your mother's name? <br>
+    <input type="text" name="name"></p>
+    <p> New password <br>
+      <input type="password" name="password"></p>
+  
+    <input type="submit" value="Log in">
+  </form>
+{% endblock %}
